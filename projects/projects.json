@@ -1,73 +1,71 @@
 [
   {
-    "name": "Metal detector ",
+    "name": "Metal detector",
     "desc": "A simple electronic circuit designed to detect metal objects by generating a magnetic field and measuring changes in its presence, commonly used in security and treasure-hunting applications.",
     "image": "metal detector",
     "category": "android",
-    "links": {
-      
-    }
-    
+    "links": {}
   },
   {
     "name": "Car Rental system",
-    "desc": "An online platform that allows users to rent vehicles for a specific duration, offering a variety of car options, convenient booking, and secure payment methods for hassle-free transportation needs. Devolped Using HTML, CSS, JS, PHP",
+    "desc": "An online platform that allows users to rent vehicles for a specific duration, offering a variety of car options, convenient booking, and secure payment methods for hassle-free transportation needs. Developed using HTML, CSS, JS, PHP.",
     "image": "cars",
     "category": "android",
-    "links": {
-      
-    }
+    "links": {}
   },
   {
     "name": "Water level management system",
     "desc": "A smart technology that monitors and controls water levels in reservoirs, tanks, or dams, ensuring efficient water usage, preventing floods, and maintaining a sustainable water supply.",
     "image": "water",
     "category": "android",
-    "links": {
-      
-    }
+    "links": {}
   },
   {
     "name": "Traffic light management",
-    "desc": " A computer graphics project simulating traffic light signals, showcasing real-time traffic flow control, visualizing the efficient management of intersections for improved road safety and traffic management.",
+    "desc": "A computer graphics project simulating traffic light signals, showcasing real-time traffic flow control, visualizing the efficient management of intersections for improved road safety and traffic management.",
     "image": "traffic",
     "category": "android",
-    "links": {
-      
-    }
+    "links": {}
   },
   {
-    "name": "Water remainder application",
+    "name": "Water reminder application",
     "desc": "A mobile app that helps users stay hydrated by sending timely reminders to drink water, tracking daily intake, and promoting healthy hydration habits for overall well-being.",
     "image": "water 2",
     "category": "android",
-    "links": {
-      
-    }
+    "links": {}
   },
   {
-    "name": "matrimony",
-    "desc": "Matrimony sites facilitate connections, enabling individuals to seekpartners, fostering relationships, marriages, and long-lastingcompanionship worldwide.",
+    "name": "Matrimony",
+    "desc": "Matrimony sites facilitate connections, enabling individuals to seek partners, fostering relationships, marriages, and long-lasting companionship worldwide.",
     "image": "matrimony",
     "category": "android",
-    "links": {
-      
-    }
+    "links": {}
   },
   {
     "name": "Fitness tracker website",
-    "desc": " An online platform that allows users to monitor their physical activities, track fitness progress, set goals, and access personalized workout plans for a healthier and more active lifestyle.",
+    "desc": "An online platform that allows users to monitor their physical activities, track fitness progress, set goals, and access personalized workout plans for a healthier and more active lifestyle.",
     "image": "muscle",
     "category": "android",
     "links": {
-     "links": " https://muscle-zone.netlify.app/"
+      "live": "https://muscle-zone.netlify.app/"
     }
   },
- 
+  {
+    "name": "Website for Spice industry",
+    "desc": "A modern, user-friendly website showcasing NCS’s range of premium spices and fresh pastes with easy product browsing and brand-focused design.",
+    "image": "logo",
+    "category": "android",
+    "links": {
+      "live": "https://ncsspices.shop/"
+    }
+  },
+  {
+    "name": "Website for Fancy store",
+    "desc": "A luxury Black Diamond–themed fancy store website featuring a sleek, high-end design with a bold, premium shopping experience.",
+    "image": "BD",
+    "category": "android",
+    "links": {
+      "live": "https://bd1gram.netlify.app/"
+    }
+  }
 ]
-
-
-
-
-
-
