@@ -63,24 +63,9 @@
      "links": " https://muscle-zone.netlify.app/"
     }
   },
-  {
-    "name": "Website for Spice industry",
-    "desc": "A modern, user-friendly website showcasing NCS’s range of premium spices and fresh pastes with easy product browsing and brand-focused design.",
-    "image": "logo",
-    "category": "android",
-    "links": {"https://ncsspices.shop/"
-    }
-    },
-   {
-    "name": "Website for Fancy store",
-    "desc": "A luxury Black Diamond–themed fancy store website featuring a sleek, high-end design with a bold, premium shopping experience.",
-    "image": "BD",
-    "category": "android",
-    "links": {"https://bd1gram.netlify.app/"
-    }
-    }
-  
+ 
 ]
+
 
 
 
