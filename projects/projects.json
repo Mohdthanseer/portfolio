@@ -62,5 +62,15 @@
     "links": {
      "links": " https://muscle-zone.netlify.app/"
     }
-  }
+  },
+  {
+    "name": "Website for Spice industry",
+    "desc": "A modern, user-friendly website showcasing NCS’s range of premium spices and fresh pastes with easy product browsing and brand-focused design.",
+    "image": "cars",
+    "category": "android",
+    "links": "https://ncsspices.shop/"
+      
+    }
+  },
 ]
+
