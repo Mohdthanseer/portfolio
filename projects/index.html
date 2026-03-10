@@ -44,8 +44,7 @@
     <button class="btn" data-filter=".android">Android App</button> -->
   </div>
 
-<div class="box-container" id="projectContainer"></div>
-
+<div class="box-container">
     <!-- <div class="box tilt">
       <img src="/assets/images/projects/agecalc.PNG" alt="" />
       <div class="content">
@@ -94,39 +93,9 @@
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
-<script>
-  // Path to your JSON file
-  const jsonPath = '/projects/projects.json';
-  const container = document.getElementById('projectContainer');
-
-  fetch(jsonPath)
-    .then(response => response.json())
-    .then(projects => {
-      projects.forEach(proj => {
-        // Build the image path dynamically from project JSON
-        const imgSrc = `/assets/images/projects/${proj.image.replace(/\s+/g, '').toLowerCase()}.PNG`;
-
-        const box = document.createElement('div');
-        box.classList.add('box', 'tilt');
-        box.innerHTML = `
-          <img src="${imgSrc}" alt="${proj.name}" />
-          <div class="content">
-            <div class="tag"><h3>${proj.name}</h3></div>
-            <div class="desc">
-              <p>${proj.desc}</p>
-              <div class="btns">
-                <a href="${proj.links.view || '#'}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-              </div>
-            </div>
-          </div>
-        `;
-        container.appendChild(box);
-      });
-    })
-    .catch(err => console.error('Error loading projects:', err));
-</script>
 
 </body>
 </html>
+
 
 
