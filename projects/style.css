@@ -1,3 +1,4 @@
+/* ===== Base ===== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
@@ -28,7 +29,7 @@ body{
   color: #fff;
 }
 
-/* Navbar */
+/* ===== Navbar ===== */
 header{
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -72,7 +73,7 @@ header .navbar ul li a:hover{
   padding: .5rem 0;
 }
 
-/* Hamburger */
+/* ===== Hamburger ===== */
 #menu{ font-size: 3rem; cursor: pointer; color: rgb(24, 2, 63); display: none; }
 @media(max-width:768px){
   #menu{ display: block; }
@@ -83,11 +84,14 @@ header .navbar ul li a:hover{
   header .navbar.nav-toggle{ right: 0; }
 }
 
-/* Work Section */
+/* ===== Work Section ===== */
 .work{
   background: linear-gradient(to bottom, #010136, #00003a);
   margin-top: 5rem;
+  padding: 2rem;
+  text-align: center;
 }
+
 .work h2{ color: #fff; padding: 1rem; }
 .work .heading span{ color: rgb(255, 230, 0); }
 
@@ -115,17 +119,18 @@ header .navbar ul li a:hover{
   color: #000;
 }
 
+/* ===== Projects Grid ===== */
 .work .box-container{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
   gap: 2rem;
-  justify-content: center; /* center projects */
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
 .work .box-container .box{
-  flex: 1 1 30rem;
+  width: 100%;
   max-width: 380px;
   border-radius: .5rem;
   box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
@@ -151,6 +156,7 @@ header .navbar ul li a:hover{
   display: flex;
   flex-direction: column;
 }
+
 .work .box .tag{
   display: flex;
   justify-content: space-between;
@@ -186,16 +192,7 @@ header .navbar ul li a:hover{
   background: #310ae0f5;
 }
 
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-  .work .box-container .box{ flex: 1 1 90%; max-width: 400px; }
-}
-@media screen and (max-width: 450px){
-  .work .button-group{ width: 100%; }
-  .work .box-container{ margin: 0; }
-}
-
-/* Scroll top button */
+/* ===== Scroll Top ===== */
 #scroll-top{
   position: fixed;
   top: -140%;
@@ -210,4 +207,15 @@ header .navbar ul li a:hover{
 }
 #scroll-top.active{
   top: calc(100% - 12rem);
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .work .box-container .box{ max-width: 90%; height: auto; }
+}
+
+@media screen and (max-width: 450px){
+  .work .button-group{ width: 100%; }
+  .work .box-container{ margin: 0; }
+  .work .box-container .box{ height: auto; }
 }
