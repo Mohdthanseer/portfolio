@@ -1,0 +1,48 @@
+/* ===== Desktop default styles ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  padding: 15px;
+}
+
+.portfolio-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Mobile adjustments ===== */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .row {
+    flex-direction: column; /* stack elements vertically */
+  }
+
+  .text-block {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: auto;
+  }
+}
