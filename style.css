@@ -11,7 +11,29 @@
 .home .content {
   flex: 1;
   min-width: 300px;
-  z-index: 2;                    /* ensures text/socials stay above image */
+  z-index: 2;                    
+  padding: 0;                    /* remove timeline padding */
+  background: none;              /* remove background color */
+  position: relative;
+}
+
+.home .content h2, .home .content p {
+  margin: 0 0 10px 0;
+}
+
+.home .btn {
+  margin-top: 15px;
+}
+
+.home .socials {
+  margin-top: 20px;
+}
+
+.home .social-icons {
+  display: flex;
+  gap: 15px;               /* spacing between icons */
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .home .image {
@@ -26,8 +48,6 @@
   height: auto;
   display: inline-block;
 }
-
-
 
 /* ===== Timeline container ===== */
 .timeline {
@@ -46,31 +66,31 @@
   top: 0;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%); /* ensures exact centering */
+  transform: translateX(-50%);
 }
 
-/* Common container styling */
-.container {
+/* Timeline container styling */
+.timeline .container {
   padding: 10px 40px;
   position: relative;
   width: 50%;
-  box-sizing: border-box; /* important for padding */
+  box-sizing: border-box;
 }
 
 /* Left side */
-.container.left {
+.timeline .container.left {
   left: 0;
-  text-align: right; /* optional, aligns text closer to line */
+  text-align: right;
 }
 
 /* Right side */
-.container.right {
+.timeline .container.right {
   left: 50%;
   text-align: left;
 }
 
-/* Content box */
-.content {
+/* Timeline content */
+.timeline .content {
   background-color: #f1f1f1;
   padding: 20px;
   border-radius: 6px;
@@ -78,7 +98,7 @@
 }
 
 /* Arrows pointing to line */
-.container.left .content::after {
+.timeline .container.left .content::after {
   content: "";
   position: absolute;
   top: 20px;
@@ -88,7 +108,7 @@
   border-color: transparent transparent transparent #f1f1f1;
 }
 
-.container.right .content::after {
+.timeline .container.right .content::after {
   content: "";
   position: absolute;
   top: 20px;
@@ -100,45 +120,45 @@
 
 /* ===== Mobile adjustments ===== */
 @media screen and (max-width: 768px) {
+  /* Timeline mobile */
   .timeline::after {
     left: 20px;
     transform: none;
   }
 
-  .container {
+  .timeline .container {
     width: 100%;
     padding-left: 50px;
     padding-right: 25px;
     margin-bottom: 20px;
   }
 
-  .container.left,
-  .container.right {
+  .timeline .container.left,
+  .timeline .container.right {
     left: 0;
     text-align: left;
   }
 
-  .container.left .content::after,
-  .container.right .content::after {
+  .timeline .container.left .content::after,
+  .timeline .container.right .content::after {
     left: 10px;
     border: none;
   }
-}
-/* ===== Home section mobile ===== */
-@media screen and (max-width: 768px) {
+
+  /* Hero section mobile */
   .home {
-    flex-direction: column;      /* stack content above image */
+    flex-direction: column; 
     padding: 10px;
   }
 
   .home .content {
     width: 100%;
-    text-align: center;           /* center text and socials */
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
   .home .social-icons {
-    justify-content: center;      /* center social links */
+    justify-content: center;
   }
 
   .home .image {
@@ -147,9 +167,8 @@
   }
 
   .home .image img {
-    width: 80%;                   /* scale down hero image */
-    max-width: 300px;             /* optional max size */
+    width: 80%;
+    max-width: 250px;  /* slightly smaller for phones */
     height: auto;
   }
 }
-
