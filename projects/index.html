@@ -44,7 +44,7 @@
     <button class="btn" data-filter=".android">Android App</button> -->
   </div>
 
-  <div class="box-container">
+<div class="box-container" id="projectContainer"></div>
 
     <!-- <div class="box tilt">
       <img src="/assets/images/projects/agecalc.PNG" alt="" />
@@ -95,6 +95,38 @@
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
 <script src="./script.js"></script>
+<script>
+  const projects = [
+    { name: "Project 1", img: "/assets/images/projects/project1.PNG", desc: "Description 1", view: "#", code: "#" },
+    { name: "Project 2", img: "/assets/images/projects/project2.PNG", desc: "Description 2", view: "#", code: "#" },
+    { name: "Project 3", img: "/assets/images/projects/project3.PNG", desc: "Description 3", view: "#", code: "#" },
+    { name: "Project 4", img: "/assets/images/projects/project4.PNG", desc: "Description 4", view: "#", code: "#" },
+    { name: "Project 5", img: "/assets/images/projects/project5.PNG", desc: "Description 5", view: "#", code: "#" }
+    // Add more projects here
+  ];
+
+  const container = document.getElementById('projectContainer');
+
+  projects.forEach(proj => {
+    const box = document.createElement('div');
+    box.classList.add('box', 'tilt');
+    box.innerHTML = `
+      <img src="${proj.img}" alt="${proj.name}" />
+      <div class="content">
+        <div class="tag"><h3>${proj.name}</h3></div>
+        <div class="desc">
+          <p>${proj.desc}</p>
+          <div class="btns">
+            <a href="${proj.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="${proj.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    `;
+    container.appendChild(box);
+  });
+</script>
 
 </body>
 </html>
+
