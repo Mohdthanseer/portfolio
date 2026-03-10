@@ -1,48 +1,95 @@
-/* ===== Desktop default styles ===== */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 1200px;
+/* ===== Timeline container ===== */
+.timeline {
+  position: relative;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 0;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
+/* Vertical line in the middle */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #333;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* ensures exact centering */
 }
 
-.col {
-  flex: 1;
-  padding: 15px;
+/* Common container styling */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box; /* important for padding */
 }
 
-.portfolio-image img {
-  max-width: 100%;
-  height: auto;
+/* Left side */
+.container.left {
+  left: 0;
+  text-align: right; /* optional, aligns text closer to line */
+}
+
+/* Right side */
+.container.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Content box */
+.content {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 6px;
+  position: relative;
+}
+
+/* Arrows pointing to line */
+.container.left .content::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -15px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #f1f1f1;
+}
+
+.container.right .content::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #f1f1f1 transparent transparent;
 }
 
 /* ===== Mobile adjustments ===== */
 @media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 20px;
+    transform: none;
+  }
+
   .container {
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .row {
-    flex-direction: column; /* stack elements vertically */
-  }
-
-  .text-block {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .portfolio-image img {
     width: 100%;
-    height: auto;
+    padding-left: 50px;
+    padding-right: 25px;
+    margin-bottom: 20px;
+  }
+
+  .container.left,
+  .container.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .container.left .content::after,
+  .container.right .content::after {
+    left: 10px;
+    border: none;
   }
 }
