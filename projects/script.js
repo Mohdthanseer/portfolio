@@ -1,52 +1,48 @@
 $(document).ready(function () {
 
-    // Navbar toggle
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
     });
 
-    // Scroll behavior
     $(window).on('scroll load', function () {
         $('#menu').removeClass('fa-times');
         $('.navbar').removeClass('nav-toggle');
 
         if (window.scrollY > 60) {
-            $('#scroll-top').addClass('active');
+            document.querySelector('#scroll-top').classList.add('active');
         } else {
-            $('#scroll-top').removeClass('active');
+            document.querySelector('#scroll-top').classList.remove('active');
         }
     });
 });
 
-// Page visibility title change
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         document.title = "Projects | Portfolio MOHAMMED THANSEER";
         $("#favicon").attr("href", "/assets/images/favicon.png");
-    } else {
+    }
+    else {
         document.title = "Come Back To Portfolio";
         $("#favicon").attr("href", "/assets/images/favicon.png");
     }
 });
 
-// Fetch projects
+// fetch projects start
 function getProjects() {
     return fetch("projects.json")
         .then(response => response.json())
         .then(data => data);
 }
 
-// Display projects
 function showProjects(projects) {
     let projectsContainer = document.querySelector(".work .box-container");
     let projectsHTML = "";
-
     projects.forEach(project => {
         projectsHTML += `
         <div class="grid-item ${project.category}">
             <div class="box tilt">
-                <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="${project.name}" />
+                <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
                 <div class="content">
                     <div class="tag">
                         <h3>${project.name}</h3>
@@ -62,10 +58,9 @@ function showProjects(projects) {
             </div>
         </div>`;
     });
-
     projectsContainer.innerHTML = projectsHTML;
 
-    // Initialize Isotope
+    // isotope filter products
     var $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows',
@@ -74,7 +69,7 @@ function showProjects(projects) {
         }
     });
 
-    // Filter buttons
+    // filter items on button click
     $('.button-group').on('click', 'button', function () {
         $('.button-group').find('.is-checked').removeClass('is-checked');
         $(this).addClass('is-checked');
@@ -83,15 +78,25 @@ function showProjects(projects) {
     });
 }
 
-// Load projects
-getProjects().then(data => showProjects(data));
+getProjects().then(data => {
+    showProjects(data);
+});
 
-// Disable developer shortcuts
+// disable developer mode
 document.onkeydown = function (e) {
-    if (e.keyCode == 123 ||
-        (e.ctrlKey && e.shiftKey && ['I','C','J'].includes(String.fromCharCode(e.keyCode))) ||
-        (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))
-    ) {
+    if (e.keyCode == 123) {
         return false;
     }
-};
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+    }
+}
