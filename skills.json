@@ -11,6 +11,7 @@
     {
         "name": "JavaScript",
         "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
+        "disabled": true
     },
     {
         "name": "Python",
@@ -36,6 +37,7 @@
     {
         "name": "Android",
         "icon": "https://img.icons8.com/fluency/48/000000/android-os.png"
+        "disabled": true
     },
 
   
@@ -45,12 +47,14 @@
     {
         "name": "PHP",
         "icon": "https://img.icons8.com/offices/48/000000/php-logo.png"
+        "disabled": true
     },
  
  
     {
         "name": "MySQL",
         "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+        "disabled": true
     },
    
   
@@ -61,6 +65,7 @@
     {
         "name": "jQuery",
         "icon": "https://img.icons8.com/ios-filled/48/1169ae/jquery.png"
+        "disabled": true
     }
     
    
