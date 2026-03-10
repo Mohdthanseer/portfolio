@@ -1,4 +1,3 @@
-/* ===== Base ===== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
@@ -7,9 +6,8 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  outline: none;
-  border: none;
-  text-transform: capitalize;
+  outline: none; border: none;
+  text-transform:capitalize;
   transition: all .2s linear;
 }
 
@@ -29,7 +27,7 @@ body{
   color: #fff;
 }
 
-/* ===== Navbar ===== */
+/* navbar starts */
 header{
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -42,7 +40,19 @@ header{
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(146,161,176,.3);
 }
-
+section{
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+.heading{
+  font-size: 3.5rem;
+  color: rgb(32, 32, 32);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span{
+  color: rgb(115, 3, 167);
+}
 header .logo{
   font-size: 1.9rem;
   font-weight: 800;
@@ -50,7 +60,6 @@ header .logo{
   color: #0E2431;
 }
 header .logo:hover { color: #fc8c05; }
-
 header .navbar ul{
   list-style: none;
   display: flex;
@@ -64,6 +73,7 @@ header .navbar ul li a{
   font-size: 1.57rem;
   color: #0E2431;
   font-weight: 600;
+  text-decoration: none;
   letter-spacing: 0.04rem;
 }
 header .navbar ul li a.active,
@@ -73,8 +83,13 @@ header .navbar ul li a:hover{
   padding: .5rem 0;
 }
 
-/* ===== Hamburger ===== */
-#menu{ font-size: 3rem; cursor: pointer; color: rgb(24, 2, 63); display: none; }
+/* hamburger icon */
+#menu{
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
 @media(max-width:768px){
   #menu{ display: block; }
   header .navbar{ position: fixed; top: 6.5rem; right: -120%; width: 75%; height: 100%; text-align: left; align-items: flex-start; background-color: #0e0f31; }
@@ -84,27 +99,29 @@ header .navbar ul li a:hover{
   header .navbar.nav-toggle{ right: 0; }
 }
 
-/* ===== Work Section ===== */
+/* work section starts */
 .work{
   background: linear-gradient(to bottom, #010136, #00003a);
   margin-top: 5rem;
-  padding: 2rem;
-  text-align: center;
 }
-
-.work h2{ color: #fff; padding: 1rem; }
-.work .heading span{ color: rgb(255, 230, 0); }
-
+.work h2{
+  color: #fff;
+  padding: 1rem;
+}
+.work .heading span{
+  color: rgb(255, 230, 0);
+}
 .work .button-group{
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap:1rem;
   margin: 2rem auto;
   width: 50%;
   justify-content: center;
   align-items: center;
 }
 .work .button-group .btn{
+  outline: none;
   padding: 1rem 2rem;
   background: transparent;
   color: #fff;
@@ -115,107 +132,20 @@ header .navbar ul li a:hover{
 }
 .work .button-group .btn:hover,
 .work .button-group .btn.is-checked{
-  background: #fff;
+  background-color: #fff;
   color: #000;
 }
 
-/* ===== Projects Grid ===== */
+/* Center projects */
 .work .box-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-items: center;
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
   margin: 2rem auto;
-  padding: 0 1rem;
+  justify-content: center; /* added for centering */
 }
 
+/* boxes */
 .work .box-container .box{
-  width: 100%;
-  max-width: 380px;
-  border-radius: .5rem;
-  box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
-  position: relative;
-  overflow: hidden;
-  height: 30rem;
-  background: #fff;
-}
-
-.work .box img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.work .box .content{
-  position: absolute;
-  top: 85%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.9);
-  display: flex;
-  flex-direction: column;
-}
-
-.work .box .tag{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4.5rem;
-  padding-left: 1rem;
-  background: #ffd900;
-}
-.work .box .tag h3{ font-size: 2rem; }
-.work .box:hover .content{ top: 25%; }
-
-.work .desc{
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.work .desc p{ font-size: 1.5rem; }
-.work .desc .btns{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2rem;
-}
-.work .desc .btns .btn{
-  padding: 1.5rem 2.5rem;
-  border-radius: .5rem;
-  font-size: 1.5rem;
-  color: #fff;
-  background: rgb(12,12,12);
-}
-.work .desc .btns .btn:hover{
-  background: #310ae0f5;
-}
-
-/* ===== Scroll Top ===== */
-#scroll-top{
-  position: fixed;
-  top: -140%;
-  right: 2rem;
-  padding: 1rem 1.5rem;
-  font-size: 2rem;
-  background: #ffae00;
-  color: rgb(13, 0, 44);
-  border-radius: 5rem;
-  transition: 1s linear;
-  z-index: 1000;
-}
-#scroll-top.active{
-  top: calc(100% - 12rem);
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-  .work .box-container .box{ max-width: 90%; height: auto; }
-}
-
-@media screen and (max-width: 450px){
-  .work .button-group{ width: 100%; }
-  .work .box-container{ margin: 0; }
-  .work .box-container .box{ height: auto; }
-}
+  flex:1 1 30rem;
+  max-width
