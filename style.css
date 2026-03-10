@@ -1,3 +1,34 @@
+/* ===== Home section (hero) ===== */
+.home {
+  display: flex;
+  align-items: center;           /* vertically center content */
+  justify-content: space-between;/* space between text and image */
+  flex-wrap: wrap;               /* allow stacking if needed */
+  padding: 20px;
+  position: relative;
+}
+
+.home .content {
+  flex: 1;
+  min-width: 300px;
+  z-index: 2;                    /* ensures text/socials stay above image */
+}
+
+.home .image {
+  flex: 1;
+  min-width: 250px;
+  z-index: 1;
+  text-align: center;
+}
+
+.home .image img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+
+
 /* ===== Timeline container ===== */
 .timeline {
   position: relative;
@@ -93,3 +124,32 @@
     border: none;
   }
 }
+/* ===== Home section mobile ===== */
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;      /* stack content above image */
+    padding: 10px;
+  }
+
+  .home .content {
+    width: 100%;
+    text-align: center;           /* center text and socials */
+    margin-bottom: 20px;
+  }
+
+  .home .social-icons {
+    justify-content: center;      /* center social links */
+  }
+
+  .home .image {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .home .image img {
+    width: 80%;                   /* scale down hero image */
+    max-width: 300px;             /* optional max size */
+    height: auto;
+  }
+}
+
